@@ -26,6 +26,8 @@ const notify = () => toast("An item is added to favorites.");
       
        <Footer></Footer>
 
+       <button   onClick={alert}>ppg</button>
+
        
        
     </>

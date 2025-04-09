@@ -7,7 +7,8 @@
           "currentBidPrice":"2850",
           "timeLeft":"1 day",
            "bidsCount":"10",
-           "image":"https://i.ibb.co.com/YFLYfdCR/Bid1-min.png"
+           "image":"https://i.ibb.co.com/YFLYfdCR/Bid1-min.png",
+           "condition":true
     },
     {
         "id":2,
@@ -16,7 +17,8 @@
           "currentBidPrice":"3850",
           "timeLeft":"2 days",
            "bidsCount":"14",
-           "image":"https://i.ibb.co.com/hRx873VG/Bid2-min.png"
+           "image":"https://i.ibb.co.com/hRx873VG/Bid2-min.png",
+           "condition":true
     },
     { "id":3,
     "title":"Original Apple Macintosh 128K (1984)",
@@ -24,7 +26,8 @@
       "currentBidPrice":"7890",
       "timeLeft":"3 days",
        "bidsCount":"21",
-       "image":"https://i.ibb.co.com/NnjrMH9G/Bid3-min.png"
+       "image":"https://i.ibb.co.com/NnjrMH9G/Bid3-min.png",
+       "condition":true
     },
     {
         "id":4,
@@ -33,7 +36,9 @@
           "currentBidPrice":"10890",
           "timeLeft":"5 days",
            "bidsCount":"23",
-           "image":"https://i.ibb.co.com/B21txpBg/Bid4-min.png"
+           "image":"https://i.ibb.co.com/B21txpBg/Bid4-min.png",
+           "condition":true
+
     },
     {
         "id":5,
@@ -42,7 +47,9 @@
           "currentBidPrice":"670",
           "timeLeft":"4 days",
            "bidsCount":"11",
-           "image":"https://i.ibb.co.com/3mfYT8Wf/Bid5-min.png"
+           "image":"https://i.ibb.co.com/3mfYT8Wf/Bid5-min.png",
+           "condition":true
+           
     },
     {
         "id":6,
@@ -51,7 +58,8 @@
           "currentBidPrice":"230",
           "timeLeft":"5 days",
            "bidsCount":"16",
-           "image":"https://i.ibb.co.com/gbSDPmty/Bid6-min.png"
+           "image":"https://i.ibb.co.com/gbSDPmty/Bid6-min.png",
+           "condition":true
     },
     {
         "id":7,
@@ -60,7 +68,8 @@
           "currentBidPrice":"180",
           "timeLeft":"7 days",
            "bidsCount":"15",
-           "image":"https://i.ibb.co.com/rGrC438x/Bid7-min.png"
+           "image":"https://i.ibb.co.com/rGrC438x/Bid7-min.png",
+           "condition":true
     }
 
 ]

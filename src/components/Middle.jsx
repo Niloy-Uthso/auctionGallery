@@ -5,6 +5,28 @@ const Middle = ({fetUser,notify}) => {
 
     const [favoriteItems,setFavoriteItems]=useState([])
     const [disabl, setDisabled] = useState([]);
+    // const [isDisabled, setIsDisabled] = useState(false);
+
+    // const handleClick = () => {
+    //   setIsDisabled(true); // Disable the button after clicking
+    // };
+
+    const [coLor,setCoLor]=useState([])
+
+    const addcolor=(i)=>{
+          
+        i.condition=false
+        coLor
+        setCoLor(i)
+        
+        
+    }
+
+    const removecolor=(i)=>{
+        i.condition=true
+        coLor
+        setCoLor(i)
+    }
    
     const [totalSum, setTotalSum] = useState(0);
 
@@ -47,7 +69,7 @@ const Middle = ({fetUser,notify}) => {
         <div className='flex justify-around mt-5 '>
             <div  className='border rounded-3xl w-[60vw]'>
                 <div className='grid grid-cols-4 mb-6 gap-4 items-center h-[112px]'>
-                    <p>Items</p>
+                    <p disabled onClick={alert}>Items</p>
                     <p>Current Bid</p>
                     <p>Time left</p>
                     <p>Bid Now</p>
@@ -61,10 +83,13 @@ const Middle = ({fetUser,notify}) => {
                         <p className=''>{i.title}</p>
                     </div>
                     <p className='ml-10'>{i.currentBidPrice}</p>
-                    <p>{i.timeLeft}</p>
-                    <button id={`btn-${i.id}`}  onClick={()=>{handleFavorite(i);disable(i.id);notify();add(i.currentBidPrice)} } className= {`btn btn-circle ${disabl.includes(i.id) ? "bg-red-900 cursor-not-allowed border" : ""}`} disabled={disabl.includes(i.id)}>
-                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="size-[1.2em]"><path strokeLinecap="" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-                     </button>
+                    <p >{i.timeLeft}</p>
+                    {/* <button id={`btn-${i.id}`}  onClick={()=>{handleFavorite(i);disable(i.id);notify();add(i);addcolor()} } className= {`btn btn-circle ${(coLor) ? "" : "bg-red-900 cursor-not-allowed border"}`} disabled={disabl.includes(i.id)}> */}
+                    {/* <button id={`btn-${i.id}`}  onClick={()=>{handleFavorite(i);disable(i.id);notify();add(i.currentBidPrice);addcolor(i)} } className= {`btn btn-circle size-[1.2em] ${(i.condition) ? "" : "bg-red-900 cursor-not-allowed border"}`} > */}
+                 <button disabled={!i.condition}>
+                 <svg  onClick={()=>{handleFavorite(i);disable(i.id);notify();add(i.currentBidPrice);addcolor(i);} } xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"  className= {`size-[1.2em] ${(i.condition) ? "" : "fill-red-600 cursor-not-allowed"}`}><path strokeLinecap="" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+                 </button>
+                     {/* </button> */}
                       
                 </div>
                    ) 
@@ -98,13 +123,13 @@ const Middle = ({fetUser,notify}) => {
                                  <p>Bid:{item.bidsCount}</p>
                             </div>
                         </div>
-                        <button className='mr-1' onClick={()=>{p(item.id);deduct(item.currentBidPrice)}}>hdhd</button>
+                        <button className='mr-1' onClick={()=>{p(item.id);deduct(item.currentBidPrice);removecolor(item)}}>hdhd</button>
                     </div>
                        )
                      }
                      <div className='flex justify-around mt-5'>
                             <p>Total bids amount</p>
-                            <p className='font-bold'>$ {totalSum}</p>
+                            <p className='font-bold'>${totalSum}</p>
                             </div> 
 
             </div>
