@@ -1,5 +1,5 @@
 import React, { use, useState } from 'react';
-
+import { RxCross1 } from "react-icons/rx";
 
 const Middle = ({fetUser,notify}) => {
 
@@ -42,8 +42,6 @@ const Middle = ({fetUser,notify}) => {
                 setTotalSum(totalSum-t)
     }
 
-    
-
    const fetchUser=use(fetUser)
 
    const handleFavorite = (data) => {
@@ -52,8 +50,12 @@ const Middle = ({fetUser,notify}) => {
       setFavoriteItems([...favoriteItems,data])
         const r=   document.getElementById('hid')
         r.classList.add('hidden');
+           
+         
          
   };
+   
+  
   const disable=(i)=>{
     setDisabled([...disabl,i])
  
@@ -66,15 +68,15 @@ const Middle = ({fetUser,notify}) => {
 //   console.log(favoriteItems[favoriteItems.length-1].title)
  
     return (
-        <div className='flex justify-around  p-5 pt-20 h-[1360px]'    style={{ backgroundColor: "rgba(235, 240, 245, 1.00)" }}>
+        <div className='flex justify-around  p-5 pt-20 h-[1360px]' style={{ backgroundColor: "rgba(235, 240, 245, 1.00)" }}>
          
           <div> 
           <h1 className='font-semibold text-2xl mb-2 ml-2' style={{ color: "rgba(14, 41, 84, 1.00)" }}>Active Auction</h1>
           <p className='font-normal mb-2 ml-2'>Discover and bid on extraordinary items</p>
              <div  className=' rounded-3xl w-[60vw] bg-white h-[1160px]'>
                 
-                <div className='grid grid-cols-4 mb-6 gap-4 items-center border-b-[1px] h-[112px]'>
-                    <p disabled onClick={alert}>Items</p>
+                <div className='grid grid-cols-4 mb-6 gap-4 pl-15 items-center border-b-[1px] h-[112px]'>
+                    <p>Items</p>
                     <p>Current Bid</p>
                     <p>Time left</p>
                     <p>Bid Now</p>
@@ -87,7 +89,7 @@ const Middle = ({fetUser,notify}) => {
                         <img className='w-14 h-16' src={i.image} alt="" />
                         <p className=''>{i.title}</p>
                     </div>
-                    <p className='ml-10'>{i.currentBidPrice}</p>
+                    <p className='ml-10'>${i.currentBidPrice}</p>
                     <p >{i.timeLeft}</p>
                     {/* <button id={`btn-${i.id}`}  onClick={()=>{handleFavorite(i);disable(i.id);notify();add(i);addcolor()} } className= {`btn btn-circle ${(coLor) ? "" : "bg-red-900 cursor-not-allowed border"}`} disabled={disabl.includes(i.id)}> */}
                     {/* <button id={`btn-${i.id}`}  onClick={()=>{handleFavorite(i);disable(i.id);notify();add(i.currentBidPrice);addcolor(i)} } className= {`btn btn-circle size-[1.2em] ${(i.condition) ? "" : "bg-red-900 cursor-not-allowed border"}`} > */}
@@ -129,7 +131,7 @@ const Middle = ({fetUser,notify}) => {
                                  <p>Bid:{item.bidsCount}</p>
                             </div>
                         </div>
-                        <button className='mr-1' onClick={()=>{p(item.id);deduct(item.currentBidPrice);removecolor(item)}}>hdhd</button>
+                        <button className='mr-1' onClick={()=>{p(item.id);deduct(item.currentBidPrice);removecolor(item)}}><RxCross1 /></button>
                     </div>
                        )
                      }

@@ -15,6 +15,7 @@ console.log(fetUser.length)
 const notify = () => toast("An item is added to favorites.");
   return (
     <>
+      <div className='sora-normal'>
       <Navbar></Navbar>
       <ToastContainer />
       <Banner></Banner>
@@ -26,7 +27,8 @@ const notify = () => toast("An item is added to favorites.");
       
        <Footer></Footer>
 
-       <button   onClick={alert}>ppg</button>
+       
+      </div>
 
        
        
