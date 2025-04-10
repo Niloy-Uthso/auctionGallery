@@ -1,23 +1,23 @@
 import React from 'react';
-
+import { IoNotificationsCircleOutline } from "react-icons/io5";
 const Navbar = () => {
     return (
         <div>
-            <div className="navbar bg-base-100 shadow-sm border flex justify-between">
-  <div className="flex justify-around items-center border">
+            <div className="navbar bg-base-100 shadow-sm  flex justify-around">
+  <div className="flex justify-around items-center">
     <a className="text-xl font-bold "><span className='' style={{color:'blue'}}>Auction</span><span style={{color:'yellow'}}>Gallery</span></a>
     
   </div>
 
-  <div className='flex border justify-around gap-3'>
+  <div className='flex  justify-around gap-3'>
           <p>Home</p>
           <p>Auction</p>
           <p>Category</p>
           <p>How to work</p>
         </div>  
 
-  <div className="flex border">
-    
+  <div className="flex justify-between items-center gap-3">
+  <IoNotificationsCircleOutline size={25} />
      
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">

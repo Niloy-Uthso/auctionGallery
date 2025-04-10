@@ -66,9 +66,14 @@ const Middle = ({fetUser,notify}) => {
 //   console.log(favoriteItems[favoriteItems.length-1].title)
  
     return (
-        <div className='flex justify-around mt-5 '>
-            <div  className='border rounded-3xl w-[60vw]'>
-                <div className='grid grid-cols-4 mb-6 gap-4 items-center h-[112px]'>
+        <div className='flex justify-around  p-5 pt-20 h-[1360px]'    style={{ backgroundColor: "rgba(235, 240, 245, 1.00)" }}>
+         
+          <div> 
+          <h1 className='font-semibold text-2xl mb-2 ml-2' style={{ color: "rgba(14, 41, 84, 1.00)" }}>Active Auction</h1>
+          <p className='font-normal mb-2 ml-2'>Discover and bid on extraordinary items</p>
+             <div  className=' rounded-3xl w-[60vw] bg-white h-[1160px]'>
+                
+                <div className='grid grid-cols-4 mb-6 gap-4 items-center border-b-[1px] h-[112px]'>
                     <p disabled onClick={alert}>Items</p>
                     <p>Current Bid</p>
                     <p>Time left</p>
@@ -77,7 +82,7 @@ const Middle = ({fetUser,notify}) => {
                   
                   {
                    fetchUser.map(i=>
-                    <div className='grid grid-cols-4 mb-6 gap-16 items-center pl-3  h-[112px]'>
+                    <div className='grid border-b-[1px] grid-cols-4 mb-6 gap-16 items-center pl-3  h-[112px]'>
                     <div className='flex items-center gap-1 w-56'>
                         <img className='w-14 h-16' src={i.image} alt="" />
                         <p className=''>{i.title}</p>
@@ -96,17 +101,18 @@ const Middle = ({fetUser,notify}) => {
                     
                    
                   }
+                  </div>
                   
             </div>
-            <div className='w-[35%] border rounded-3xl'>
+            <div className='w-[35%]  rounded-3xl mt-18 bg-white h-[1160px]'>
                      <div >
-                     <div className='flex gap-2 justify-center'>
+                     <div className='flex gap-2 justify-center items-center border-b-[1px] h-20'>
                       <button className="btn btn-circle ">
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="size-[1.2em]"><path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
                                 </button>
                         <h1 className='font-medium text-4xl'>Favorite Items</h1>
                       </div>
-                     <div id='hid' className='mt-4 flex flex-col items-center'>
+                     <div id='hid' className='mt-4 flex flex-col items-center h-24 border-b-[1px]'>
                         <h1 className='font-medium text-2xl'>No favorite yet</h1>
                         <p className='font-light text-sm'>Click the heart icon on any item to <br /> add it to your favorites</p>
                         </div>
@@ -114,9 +120,9 @@ const Middle = ({fetUser,notify}) => {
                      </div>
                      {
                        favoriteItems.map(item=>
-                        <div className='flex justify-between border items-center mt-5'>
+                        <div className='flex justify-evenly border-b-[1px] h-28 items-center mt-5'>
                         <img className='w-14 h-16 ml-1' src={item.image} alt="" />
-                        <div className='w-56 border flex flex-col items-center gap-4'>
+                        <div className='w-56  flex flex-col items-center gap-4'>
                             <p className=''>{item.title} </p>
                             <div className='flex gap-12'>
                                 <p>{item.currentBidPrice}</p>
