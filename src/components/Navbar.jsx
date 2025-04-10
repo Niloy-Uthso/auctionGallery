@@ -9,7 +9,7 @@ const Navbar = () => {
     
   </div>
 
-  <div className='flex  justify-around gap-3'>
+  <div className='flex justify-around gap-3'>
           <p>Home</p>
           <p>Auction</p>
           <p>Category</p>
