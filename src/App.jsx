@@ -13,6 +13,7 @@ function App() {
   .then(res=>res.json())
 console.log(fetUser.length)
 const notify = () => toast("An item is added to favorites.");
+const notifys = () => toast("An item is removed from favorites.");
   return (
     <>
       <div className='sora-normal'>
@@ -21,7 +22,7 @@ const notify = () => toast("An item is added to favorites.");
       <Banner></Banner>
 
       <Suspense fallback={ <h1>comming</h1>  }>
-      <Middle fetUser={fetUser} notify={notify}></Middle>
+      <Middle fetUser={fetUser} notify={notify} notifys={notifys}></Middle>
       </Suspense>
            
       

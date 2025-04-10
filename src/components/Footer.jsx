@@ -16,7 +16,7 @@ const Footer = () => {
                 <p>How to Work</p>
             </div>
             <p>© 2025 AuctionHub.All rights reserved.</p>
-            <p>notun</p>
+             
         </div>
     );
 };

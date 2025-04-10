@@ -1,15 +1,11 @@
 import React, { use, useState } from 'react';
 import { RxCross1 } from "react-icons/rx";
 
-const Middle = ({fetUser,notify}) => {
+const Middle = ({fetUser,notify,notifys}) => {
 
     const [favoriteItems,setFavoriteItems]=useState([])
     const [disabl, setDisabled] = useState([]);
-    // const [isDisabled, setIsDisabled] = useState(false);
-
-    // const handleClick = () => {
-    //   setIsDisabled(true); // Disable the button after clicking
-    // };
+     
 
     const [coLor,setCoLor]=useState([])
 
@@ -18,7 +14,6 @@ const Middle = ({fetUser,notify}) => {
         i.condition=false
         coLor
         setCoLor(i)
-        
         
     }
 
@@ -31,14 +26,16 @@ const Middle = ({fetUser,notify}) => {
     const [totalSum, setTotalSum] = useState(0);
 
     const add=(c)=>{
-
-        const t=parseFloat(c)
+         
+       const s= c.replace(/,/g, "")
+         
+        const t=parseFloat(s)
                 setTotalSum(totalSum+t)
     }
 
     const deduct=(c)=>{
-
-        const t=parseFloat(c)
+        const s= c.replace(/,/g, "")
+        const t=parseFloat(s)
                 setTotalSum(totalSum-t)
     }
 
@@ -62,10 +59,10 @@ const Middle = ({fetUser,notify}) => {
   }
 
   const p=(i)=>{
-        console.log(i)
+        
         setFavoriteItems(favoriteItems.filter((cl)=>cl.id!==i))   
   }
-//   console.log(favoriteItems[favoriteItems.length-1].title)
+ 
  
     return (
         <div className='flex justify-around  p-5 pt-20 h-[1360px]' style={{ backgroundColor: "rgba(235, 240, 245, 1.00)" }}>
@@ -131,13 +128,13 @@ const Middle = ({fetUser,notify}) => {
                                  <p>Bid:{item.bidsCount}</p>
                             </div>
                         </div>
-                        <button className='mr-1' onClick={()=>{p(item.id);deduct(item.currentBidPrice);removecolor(item)}}><RxCross1 /></button>
+                        <button className='mr-1' onClick={()=>{p(item.id);deduct(item.currentBidPrice);removecolor(item);notifys()}}><RxCross1 /></button>
                     </div>
                        )
                      }
                      <div className='flex justify-around mt-5'>
                             <p>Total bids amount</p>
-                            <p className='font-bold'>${totalSum}</p>
+                            <p className='font-bold'>${totalSum.toLocaleString()}</p>
                             </div> 
 
             </div>
